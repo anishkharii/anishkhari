@@ -4,6 +4,14 @@ import PreviewIcon from '@mui/icons-material/Preview';
 import './works.css'
 const workData = [
     {
+        id:4,
+        title:'Cross N Knot Game',
+        description:'Personal Portfolio Website',
+        imgUrl: "./images/work4.png",
+        publicLink: "https://crossnknot.vercel.app/",
+        githubLink: "https://github.com/anishkharii/tictactoe_Reactjs"
+    },
+    {
         id:1,
         title:'Electricity Units Calculator',
         description:'Simple calculator to calculate the units of electricity',
@@ -28,14 +36,6 @@ const workData = [
         githubLink: "https://github.com/anishkharii/youtube-video-downloader-backend"
     },
     {
-        id:4,
-        title:'Portfolio Website',
-        description:'Personal Portfolio Website',
-        imgUrl: "./images/work4.png",
-        publicLink: "https://anishkharii.github.io/Portfolio/",
-        githubLink: "https://github.com/anishkharii/Portfolio"
-    },
-    {
         id:5,
         title:'QR Code Generator',
         description:'QR Code Generator',
@@ -57,7 +57,7 @@ const WorkContainer = ()=>{
     return (
         workData.map((item)=>(
             <li key={item.id} className="work-container">
-                <img src={item.imgUrl} alt="" />
+                <img src={item.imgUrl} alt="" onError={(e)=>{e.target.src='./images/empty_img.webp'}} />
                 <div className="work-details">
 
                 <h3 className="work-title">{item.title}</h3>
